@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dra. Nathália Miranda - Dentista em Belo Horizonte</title>
+  <meta name="description" content="Atendimento odontológico de excelência com foco em cuidado humanizado, precisão e bem-estar em Belo Horizonte. Inicie seu contato pelo WhatsApp.">
+  
+  <!-- Google Fonts: Nunito Sans (Títulos) e Lato (Corpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&family=Nunito+Sans:ital,opsz,wght@0,6..12,500;0,6..12,700;0,6..12,800;1,6..12,600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "marca": "#7C3AED",
+            "marca-forte": "#6D28D9",
+            "superficie": "#F5F3FF",
+            "tinta": "#1F2937",
+            "suave": "#4B5563"
+          },
+          fontFamily: {
+            "titulo": ["Nunito Sans", "sans-serif"],
+            "corpo": ["Lato", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Transições e movimentos acessíveis */
+    @keyframes heroFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .anim-hero-1 {
+      animation: heroFadeUp 600ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .anim-hero-2 {
+      animation: heroFadeUp 600ms cubic-bezier(0.16, 1, 0.3, 1) 120ms forwards;
+      opacity: 0;
+    }
+    .anim-hero-3 {
+      animation: heroFadeUp 600ms cubic-bezier(0.16, 1, 0.3, 1) 240ms forwards;
+      opacity: 0;
+    }
+    .anim-hero-img {
+      animation: heroFadeUp 800ms cubic-bezier(0.16, 1, 0.3, 1) 150ms forwards;
+      opacity: 0;
+    }
+
+    /* Respeito estrito a preferências de movimento reduzido */
+    @media (prefers-reduced-motion: reduce) {
+      *, ::before, ::after {
+        animation-delay: 0s !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .anim-hero-1, .anim-hero-2, .anim-hero-3, .anim-hero-img {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+
+    /* Estilo do detalhe/menu mobile nativo sem JavaScript */
+    details[open] summary svg.chevron-icon {
+      transform: rotate(180deg);
+    }
+    summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-superficie text-tinta font-corpo antialiased selection:bg-marca selection:text-superficie m-0 p-0 overflow-x-hidden">
+
+  <!-- CABEÇALHO / NAVEGAÇÃO INSTITUCIONAL (altura <= 80px no desktop) -->
+  <header class="sticky top-0 z-50 w-full bg-superficie/95 backdrop-blur-md border-b border-marca/10 transition-all">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+      <!-- Identidade Oficial -->
+      <a href="#inicio" class="flex flex-col group text-left focus:outline-none focus:ring-2 focus:ring-marca focus:ring-offset-2 rounded-lg p-1" aria-label="Ir para o início">
+        <span class="font-titulo font-extrabold text-lg sm:text-xl tracking-tight text-tinta group-hover:text-marca transition-colors">
+          Dra. Nathália Miranda
+        </span>
+        <span class="text-xs font-titulo uppercase tracking-wider text-suave font-bold">
+          Dentista • Belo Horizonte
+        </span>
+      </a>
+
+      <!-- Navegação Desktop em uma única linha -->
+      <nav class="hidden md:flex items-center space-x-8" aria-label="Navegação Principal">
+        <a href="#inicio" class="text-sm font-medium text-suave hover:text-marca transition-colors focus:outline-none focus:ring-2 focus:ring-marca rounded py-1 px-2">Início</a>
+        <a href="#atendimento" class="text-sm font-medium text-suave hover:text-marca transition-colors focus:outline-none focus:ring-2 focus:ring-marca rounded py-1 px-2">Atendimento</a>
+        <a href="#canais" class="text-sm font-medium text-suave hover:text-marca transition-colors focus:outline-none focus:ring-2 focus:ring-marca rounded py-1 px-2">Canais Oficiais</a>
+        <a href="#contato" class="text-sm font-medium text-suave hover:text-marca transition-colors focus:outline-none focus:ring-2 focus:ring-marca rounded py-1 px-2">Contato</a>
+      </nav>
+
+      <!-- CTA Cabeçalho Desktop (Alvo mínimo 44px) -->
+      <div class="hidden md:flex items-center">
+        <a href="https://wa.me/5531992120344" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center min-h-[44px] px-6 py-2.5 rounded-full bg-marca hover:bg-marca-forte text-superficie font-titulo font-bold text-sm shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-marca focus:ring-offset-2" aria-label="Iniciar conversa no WhatsApp">
+          <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.83.815 2.796.815 3.18 0 5.767-2.587 5.768-5.766.001-3.182-2.585-5.77-5.768-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.062-2.12-.529-1.821-.754-2.987-2.59-3.078-2.711-.091-.121-.734-.977-.734-1.864 0-.887.464-1.323.63-1.498.165-.175.361-.219.482-.219.12 0 .241.002.346.007.11.005.258-.042.404.308.15.36.512 1.25.557 1.341.045.091.076.197.015.318-.06.121-.09.196-.18.302-.09.106-.189.237-.27.318-.09.091-.184.19-.079.371.106.182.47 1.037 1.137 1.632.858.766 1.58.995 1.806 1.096.226.1.36.084.496-.07.135-.155.578-.675.733-.906.155-.231.31-.192.523-.113.213.078 1.354.639 1.587.756.233.117.388.175.445.272.057.098.057.568-.087.973z"/>
+          </svg>
+          Conversar no WhatsApp
+        </a>
+      </div>
+
+      <!-- Menu Mobile Nativo com details/summary -->
+      <div class="md:hidden relative">
+        <details class="group">
+          <summary class="list-none min-w-[44px] min-h-[44px] flex items-center justify-center p-2 rounded-lg text-tinta hover:text-marca focus:outline-none focus:ring-2 focus:ring-marca cursor-pointer" aria-label="Abrir menu de navegação">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </summary>
+          <div class="absolute right-0 mt-3 w-56 p-4 bg-superficie rounded-xl border border-marca/20 shadow-xl flex flex-col space-y-3 z-50">
+            <a href="#inicio" class="text-sm font-semibold text-tinta hover:text-marca py-2 px-3 rounded-lg hover:bg-white/60">Início</a>
+            <a href="#atendimento" class="text-sm font-semibold text-tinta hover:text-marca py-2 px-3 rounded-lg hover:bg-white/60">Atendimento</a>
+            <a href="#canais" class="text-sm font-semibold text-tinta hover:text-marca py-2 px-3 rounded-lg hover:bg-white/60">Canais Oficiais</a>
+            <a href="#contato" class="text-sm font-semibold text-tinta hover:text-marca py-2 px-3 rounded-lg hover:bg-white/60">Contato</a>
+            <div class="pt-2 border-t border-marca/10">
+              <a href="https://wa.me/5531992120344" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center min-h-[44px] w-full px-4 py-2.5 rounded-full bg-marca text-superficie font-titulo font-bold text-xs shadow">
+                WhatsApp: (31) 99212-0344
+              </a>
+            </div>
+          </div>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- SEÇÃO 1: HERO / ABERTURA DA PÁGINA (Geometria: Mensagem curta + campo visual contínuo, sem módulos auxiliares ou cards sobrepostos) -->
+    <section id="inicio" class="relative pt-12 pb-16 sm:pt-16 sm:pb-24 lg:pt-20 lg:pb-28">
+      <div class="max-w-6xl mx-auto px-6">
+        <!-- Topo Editorial: Identidade e Headline com hierarquia forte -->
+        <div class="max-w-3xl mb-10 lg:mb-12">
+          <!-- Eyebrow/Rótulo Factual -->
+          <div class="anim-hero-1 mb-4">
+            <span class="inline-block text-[11px] sm:text-xs font-bold font-titulo uppercase tracking-[0.08em] text-marca">
+              Atendimento Odontológico • Belo Horizonte
+            </span>
+          </div>
+
+          <!-- Headline: 2 linhas, escala clamp e entrelinha 1.05 -->
+          <h1 class="anim-hero-2 font-titulo font-extrabold text-tinta tracking-[-0.03em] leading-[1.05] text-[clamp(2.5rem,5.5vw,4.25rem)] mb-6">
+            Cuidado odontológico com atenção precisa e acolhimento.
+          </h1>
+
+          <!-- Subheadline de até 20 palavras -->
+          <p class="anim-hero-3 font-corpo text-suave text-base sm:text-lg lg:text-xl leading-[1.6] max-w-[65ch] mb-8">
+            Consultas odontológicas personalizadas em Belo Horizonte para promover sua saúde bucal e bem-estar com serenidade.
+          </p>
+
+          <!-- CTA Principal em formato pílula e canal telefônico direto -->
+          <div class="anim-hero-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <a href="https://wa.me/5531992120344" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center min-h-[48px] px-8 py-3 rounded-full bg-marca hover:bg-marca-forte text-superficie font-titulo font-bold text-base shadow-lg hover:shadow-xl transition-all focus:outline-none focus:ring-2 focus:ring-marca focus:ring-offset-2" aria-label="Iniciar conversa no WhatsApp da Dra. Nathália Miranda">
+              <svg class="w-5 h-5 mr-2.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.83.815 2.796.815 3.18 0 5.767-2.587 5.768-5.766.001-3.182-2.585-5.77-5.768-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.062-2.12-.529-1.821-.754-2.987-2.59-3.078-2.711-.091-.121-.734-.977-.734-1.864 0-.887.464-1.323.63-1.498.165-.175.361-.219.482-.219.12 0 .241.002.346.007.11.005.258-.042.404.308.15.36.512 1.25.557 1.341.045.091.076.197.015.318-.06.121-.09.196-.18.302-.09.106-.189.237-.27.318-.09.091-.184.19-.079.371.106.182.47 1.037 1.137 1.632.858.766 1.58.995 1.806 1.096.226.1.36.084.496-.07.135-.155.578-.675.733-.906.155-.231.31-.192.523-.113.213.078 1.354.639 1.587.756.233.117.388.175.445.272.057.098.057.568-.087.973z"/>
+              </svg>
+              Iniciar conversa no WhatsApp
+            </a>
+            
+            <a href="tel:31992120344" class="inline-flex items-center justify-center min-h-[48px] px-6 py-3 rounded-full border border-marca/30 hover:border-marca text-tinta hover:text-marca font-titulo font-bold text-sm transition-all focus:outline-none focus:ring-2 focus:ring-marca focus:ring-offset-2">
+              <svg class="w-4 h-4 mr-2 text-marca" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+              Ligar para (31) 99212-0344
+            </a>
+          </div>
+        </div>
+
+        <!-- Fotografia Principal Dominante: Campo Visual Contínuo e Recorte Limpo (sem cards sobrepostos ou faixas artificiais) -->
+        <div class="anim-hero-img w-full overflow-hidden rounded-2xl shadow-2xl border border-marca/15 relative bg-superficie">
+          <img 
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9WuhBWnmlgwTwY8Wnlwq_uz2LlnpOsUOdJgHlhy6lKWYuyKi8xr9UYFOh47kYjvzZgGeTPP8ePiTkhhIQZ1X6PQ-7AfoJ4D_XQggs-oygV0D9_EIOkaM_vzcDWB5bhMgx9jF1110Dykl3nki25UEEsZMu-kLi4iry78xzz5HH5S69fvz3sSAPxmpwj9EWyfCJV0uKhUmsV37zCcL8jLnZF9-09wGWkfoU8a6NtWsPo23FJde_bADUJ0NMMDUjoQuLwqG0f2vZwcZx" 
+            alt="Ambiente odontológico sereno e moderno com consultório odontológico e luz natural em Belo Horizonte" 
+            width="1376" 
+            height="768" 
+            class="w-full h-auto aspect-[16/9] object-cover object-center block"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-tinta/30 via-transparent to-transparent pointer-events-none"></div>
+          <div class="absolute bottom-4 left-6 sm:bottom-6 sm:left-8 text-superficie text-xs sm:text-sm font-medium tracking-wide drop-shadow-md">
+            Espaço de consulta e atendimento odontológico
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 2: ATENDIMENTO E COMPROMISSO (Composição Tipográfica Assimétrica / Lista Editorial) -->
+    <section id="atendimento" class="py-16 sm:py-24 border-t border-marca/10">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          <!-- Coluna Editorial Esquerda -->
+          <div class="lg:col-span-5">
+            <span class="text-xs font-titulo font-bold uppercase tracking-[0.08em] text-marca block mb-3">
+              Contexto do Consultório
+            </span>
+            <h2 class="font-titulo font-extrabold text-tinta text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.15] mb-6">
+              Acolhimento profissional com rigor técnico e serenidade.
+            </h2>
+            <p class="font-corpo text-suave text-base sm:text-lg leading-[1.6] mb-6">
+              A prática clínica da Dra. Nathália Miranda em Belo Horizonte é guiada pela atenção individualizada, escuta ativa das queixas de cada paciente e clareza no direcionamento do cuidado bucal.
+            </p>
+            <div class="p-6 rounded-2xl bg-white/70 border border-marca/15">
+              <p class="text-sm text-suave leading-relaxed">
+                Cada consulta é planejada para proporcionar tranquilidade e precisão no diagnóstico, estabelecendo uma relação de confiança mútua e transparência.
+              </p>
+            </div>
+          </div>
+
+          <!-- Coluna Editorial Direita: Composição Assimétrica (Não é grade de cards iguais) -->
+          <div class="lg:col-span-7 flex flex-col space-y-6">
+            
+            <!-- Bloco Editorial 1: Destaque Ampliado -->
+            <div class="p-8 rounded-2xl bg-white border border-marca/15 shadow-sm transition-all hover:border-marca/40">
+              <div class="flex items-center space-x-3 mb-3">
+                <span class="w-8 h-8 rounded-full bg-superficie text-marca flex items-center justify-center font-titulo font-bold text-sm">
+                  01
+                </span>
+                <h3 class="font-titulo font-bold text-xl text-tinta">
+                  Avaliação Odontológica Detalhada
+                </h3>
+              </div>
+              <p class="text-suave text-base leading-[1.65]">
+                Exame clínico minucioso com escuta das prioridades de saúde bucal e análise diagnóstica focada no bem-estar global do paciente.
+              </p>
+            </div>
+
+            <!-- Bloco Editorial 2: Médio -->
+            <div class="p-8 rounded-2xl bg-white/80 border border-marca/15 shadow-sm transition-all hover:border-marca/40">
+              <div class="flex items-center space-x-3 mb-3">
+                <span class="w-8 h-8 rounded-full bg-superficie text-marca flex items-center justify-center font-titulo font-bold text-sm">
+                  02
+                </span>
+                <h3 class="font-titulo font-bold text-lg text-tinta">
+                  Ambiente Calmo e Confortável
+                </h3>
+              </div>
+              <p class="text-suave text-base leading-[1.65]">
+                Estrutura pensada para reduzir o estresse de consultas odontológicas, com atendimento focado no conforto e na segurança do paciente em Belo Horizonte.
+              </p>
+            </div>
+
+            <!-- Bloco Editorial 3: Compacto com CTA Rápido -->
+            <div class="p-6 rounded-2xl bg-superficie border border-marca/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+              <div>
+                <h3 class="font-titulo font-bold text-base text-tinta mb-1">
+                  Dúvidas sobre o atendimento?
+                </h3>
+                <p class="text-xs text-suave">
+                  Inicie uma conversa direta para esclarecimentos pelo WhatsApp oficial.
+                </p>
+              </div>
+              <a href="https://wa.me/5531992120344" target="_blank" rel="noopener noreferrer" class="inline-flex items-center min-h-[44px] px-5 py-2.5 rounded-full bg-marca hover:bg-marca-forte text-superficie font-titulo font-bold text-xs shrink-0 transition-colors">
+                Tirar Dúvidas
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 3: MOMENTO VISUAL DE ASSINATURA / BLOCO CROMÁTICO (Foco institucional e clareza de contato) -->
+    <section class="py-16 sm:py-24 bg-tinta text-superficie relative overflow-hidden">
+      <div class="max-w-6xl mx-auto px-6 relative z-10">
+        <div class="max-w-3xl">
+          <span class="text-xs font-titulo font-bold uppercase tracking-[0.08em] text-marca block mb-3">
+            Compromisso e Confiança
+          </span>
+          <h2 class="font-titulo font-extrabold text-white text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.15] mb-6">
+            Prioridade absoluta ao seu conforto e à sua saúde bucal.
+          </h2>
+          <p class="text-superficie/85 text-base sm:text-lg leading-[1.65] max-w-[60ch] mb-8">
+            Cada atendimento em Belo Horizonte é conduzido com calma, transparência e respeito ao seu tempo. Converse conosco para organizar seu horário e receber orientações sobre a sua consulta.
+          </p>
+          
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="https://wa.me/5531992120344" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center min-h-[48px] px-8 py-3 rounded-full bg-marca hover:bg-marca-forte text-superficie font-titulo font-bold text-base shadow-xl transition-all focus:outline-none focus:ring-2 focus:ring-superficie" aria-label="Falar agora pelo WhatsApp">
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.83.815 2.796.815 3.18 0 5.767-2.587 5.768-5.766.001-3.182-2.585-5.77-5.768-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.062-2.12-.529-1.821-.754-2.987-2.59-3.078-2.711-.091-.121-.734-.977-.734-1.864 0-.887.464-1.323.63-1.498.165-.175.361-.219.482-.219.12 0 .241.002.346.007.11.005.258-.042.404.308.15.36.512 1.25.557 1.341.045.091.076.197.015.318-.06.121-.09.196-.18.302-.09.106-.189.237-.27.318-.09.091-.184.19-.079.371.106.182.47 1.037 1.137 1.632.858.766 1.58.995 1.806 1.096.226.1.36.084.496-.07.135-.155.578-.675.733-.906.155-.231.31-.192.523-.113.213.078 1.354.639 1.587.756.233.117.388.175.445.272.057.098.057.568-.087.973z"/>
+              </svg>
+              Falar com o Atendimento
+            </a>
+            <span class="text-xs text-superficie/70 block sm:inline">
+              Contato direto via WhatsApp ou ligação
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 4: CANAIS OFICIAIS E PERFIS PÚBLICOS (Verificação e transparência factual) -->
+    <section id="canais" class="py-16 sm:py-24 border-t border-marca/10">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="mb-12">
+          <span class="text-xs font-titulo font-bold uppercase tracking-[0.08em] text-marca block mb-2">
+            Transparência Institucional
+          </span>
+          <h2 class="font-titulo font-extrabold text-tinta text-[clamp(1.75rem,3.5vw,2.5rem)] leading-[1.15]">
+            Presença e Canais Confirmados
+          </h2>
+          <p class="font-corpo text-suave text-base sm:text-lg mt-2 max-w-[65ch]">
+            Acesse as páginas oficiais cadastradas e confirme as informações profissionais públicas.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- Canal Doctoralia -->
+          <a href="https://www.doctoralia.com.br/nathalia-miranda/dentista/belo-horizonte" target="_blank" rel="noopener noreferrer" class="group p-8 rounded-2xl bg-white border border-marca/15 hover:border-marca shadow-sm hover:shadow-md transition-all flex flex-col justify-between focus:outline-none focus:ring-2 focus:ring-marca">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-titulo font-bold uppercase tracking-wider text-marca">
+                  Perfil Profissional
+                </span>
+                <svg class="w-5 h-5 text-suave group-hover:text-marca transition-colors transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </div>
+              <h3 class="font-titulo font-bold text-xl text-tinta group-hover:text-marca transition-colors mb-2">
+                Doctoralia Brasil
+              </h3>
+              <p class="text-suave text-sm leading-relaxed">
+                Página pública com informações e referências de atuação da Dra. Nathália Miranda em Belo Horizonte.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-marca/10 flex items-center text-xs font-bold text-marca">
+              Acessar perfil no Doctoralia &rarr;
+            </div>
+          </a>
+
+          <!-- Canal Google Maps -->
+          <a href="https://maps.google.com/?cid=10949753891446651727&amp;g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank" rel="noopener noreferrer" class="group p-8 rounded-2xl bg-white border border-marca/15 hover:border-marca shadow-sm hover:shadow-md transition-all flex flex-col justify-between focus:outline-none focus:ring-2 focus:ring-marca">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-titulo font-bold uppercase tracking-wider text-marca">
+                  Localização e Rotas
+                </span>
+                <svg class="w-5 h-5 text-suave group-hover:text-marca transition-colors transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                </svg>
+              </div>
+              <h3 class="font-titulo font-bold text-xl text-tinta group-hover:text-marca transition-colors mb-2">
+                Google Maps
+              </h3>
+              <p class="text-suave text-sm leading-relaxed">
+                Consulte o ponto geográfico confirmado, trace sua rota de deslocamento e visualize o local no mapa de Belo Horizonte.
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-marca/10 flex items-center text-xs font-bold text-marca">
+              Abrir rota no Google Maps &rarr;
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO 5: CONTATO DIRETO E FECHAMENTO COM ALTA CONVERSÃO -->
+    <section id="contato" class="py-16 sm:py-24 bg-superficie border-t border-marca/10">
+      <div class="max-w-4xl mx-auto px-6 text-center">
+        
+        <span class="text-xs font-titulo font-bold uppercase tracking-[0.08em] text-marca block mb-3">
+          Atendimento Direto
+        </span>
+        
+        <h2 class="font-titulo font-extrabold text-tinta text-[clamp(2rem,4vw,3rem)] leading-[1.1] mb-6">
+          Pronto para cuidar do seu sorriso com tranquilidade?
+        </h2>
+        
+        <p class="font-corpo text-suave text-base sm:text-lg leading-[1.65] max-w-[55ch] mx-auto mb-10">
+          Inicie seu contato diretamente pelo WhatsApp para verificar disponibilidade de horários e esclarecer qualquer dúvida sobre sua consulta odontológica.
+        </p>
+
+        <!-- Ação Principal Repetida com Alta Proeminência -->
+        <div class="inline-flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+          <a href="https://wa.me/5531992120344" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto inline-flex items-center justify-center min-h-[52px] px-10 py-4 rounded-full bg-marca hover:bg-marca-forte text-superficie font-titulo font-bold text-lg shadow-xl hover:shadow-2xl transition-all focus:outline-none focus:ring-2 focus:ring-marca focus:ring-offset-2" aria-label="Agendar conversa pelo WhatsApp">
+            <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.83.815 2.796.815 3.18 0 5.767-2.587 5.768-5.766.001-3.182-2.585-5.77-5.768-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.062-2.12-.529-1.821-.754-2.987-2.59-3.078-2.711-.091-.121-.734-.977-.734-1.864 0-.887.464-1.323.63-1.498.165-.175.361-.219.482-.219.12 0 .241.002.346.007.11.005.258-.042.404.308.15.36.512 1.25.557 1.341.045.091.076.197.015.318-.06.121-.09.196-.18.302-.09.106-.189.237-.27.318-.09.091-.184.19-.079.371.106.182.47 1.037 1.137 1.632.858.766 1.58.995 1.806 1.096.226.1.36.084.496-.07.135-.155.578-.675.733-.906.155-.231.31-.192.523-.113.213.078 1.354.639 1.587.756.233.117.388.175.445.272.057.098.057.568-.087.973z"/>
+            </svg>
+            Chamar no WhatsApp agora
+          </a>
+
+          <a href="tel:31992120344" class="w-full sm:w-auto inline-flex items-center justify-center min-h-[52px] px-8 py-4 rounded-full border border-marca/30 hover:border-marca text-tinta font-titulo font-bold text-base transition-all">
+            (31) 99212-0344
+          </a>
+        </div>
+
+        <p class="text-xs text-suave mt-4">
+          Atendimento telefônico e via WhatsApp em Belo Horizonte.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ INSTITUCIONAL -->
+  <footer class="bg-white border-t border-marca/10 py-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <div class="text-center md:text-left">
+          <div class="font-titulo font-extrabold text-base text-tinta">
+            Dra. Nathália Miranda- Dentista- Belo Horizonte
+          </div>
+          <div class="text-xs text-suave mt-1">
+            Odontologia e Cuidados em Saúde Bucal • Belo Horizonte, MG
+          </div>
+        </div>
+
+        <!-- Links Fatuais -->
+        <div class="flex flex-wrap justify-center items-center gap-6 text-xs text-suave font-medium">
+          <a href="#inicio" class="hover:text-marca transition-colors">Início</a>
+          <a href="#atendimento" class="hover:text-marca transition-colors">Atendimento</a>
+          <a href="https://www.doctoralia.com.br/nathalia-miranda/dentista/belo-horizonte" target="_blank" rel="noopener noreferrer" class="hover:text-marca transition-colors">Doctoralia</a>
+          <a href="https://maps.google.com/?cid=10949753891446651727&amp;g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQQAhgEIAA" target="_blank" rel="noopener noreferrer" class="hover:text-marca transition-colors">Google Maps</a>
+          <a href="https://wa.me/5531992120344" target="_blank" rel="noopener noreferrer" class="text-marca font-bold hover:underline">WhatsApp</a>
+        </div>
+
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-marca/10 text-center text-[11px] text-suave">
+        &copy; Dra. Nathália Miranda • Todos os direitos reservados. Informações institucionais públicas.
+      </div>
+    </div>
+  </footer>
+
+  <!-- BARRA FIXA MOBILE PARA CONVERSÃO IMEDIATA (Sem cobrir conteúdo / Alvo > 44px) -->
+  <div class="md:hidden fixed bottom-0 left-0 right-0 p-3 bg-superficie/95 backdrop-blur-md border-t border-marca/20 z-40">
+    <a href="https://wa.me/5531992120344" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center min-h-[48px] w-full px-6 py-3 rounded-full bg-marca text-superficie font-titulo font-bold text-sm shadow-lg hover:bg-marca-forte transition-colors">
+      <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.83.815 2.796.815 3.18 0 5.767-2.587 5.768-5.766.001-3.182-2.585-5.77-5.768-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.062-2.12-.529-1.821-.754-2.987-2.59-3.078-2.711-.091-.121-.734-.977-.734-1.864 0-.887.464-1.323.63-1.498.165-.175.361-.219.482-.219.12 0 .241.002.346.007.11.005.258-.042.404.308.15.36.512 1.25.557 1.341.045.091.076.197.015.318-.06.121-.09.196-.18.302-.09.106-.189.237-.27.318-.09.091-.184.19-.079.371.106.182.47 1.037 1.137 1.632.858.766 1.58.995 1.806 1.096.226.1.36.084.496-.07.135-.155.578-.675.733-.906.155-.231.31-.192.523-.113.213.078 1.354.639 1.587.756.233.117.388.175.445.272.057.098.057.568-.087.973z"/>
+      </svg>
+      Conversar no WhatsApp
+    </a>
+  </div>
+
+</body>
+</html>
